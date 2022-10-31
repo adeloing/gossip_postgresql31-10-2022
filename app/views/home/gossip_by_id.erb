@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>The Gossip Project</title>
+  </head>
+  <body>
+    <h1>Gossip par ID</h1>
+    <p></p>
+<div class="card" style="width: 18rem;">
+  <div class="card-header">
+    <a href="/gossip_by_id/<%= @gossip.id %>">Gossip #<%= @gossip.id %></a>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= @gossip.title %></h5>
+    <p class="card-text"><%= @gossip.content %></p>
+    <%= @gossip.created_at %>
+    <a href="/user_by_id/<%= @gossip.user.id %>"><%= @gossip.user.first_name %></a>
+  </div>
+</div>
+  </body>
+</html>
+
+

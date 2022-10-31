@@ -1,1 +1,25 @@
-<h1>Acceuil</h1>
+<h1>Mon super site de gossip !</h1>
+<p></p>
+<% x = 1  %>
+  <div class="container text-center">
+    <div class="row">
+      <% @gossips.each do |gossip| %>
+        <% x += 1  %>
+        <% if x % 5 == 0 %>
+          </div><div class="row">
+        <% end %>
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+              <a href="/gossip_by_id/<%= gossip.id %>">Gossip #<%= gossip.id %></a>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><%= gossip.title %></h5>
+              <p class="card-text"><%= gossip.content %></p>
+              <a href="/user_by_id/<%= gossip.user.id %>"><%= gossip.user.first_name %></a>
+            </div>
+          </div>
+          </div>
+        <% end %>
+</div>
+</div>
